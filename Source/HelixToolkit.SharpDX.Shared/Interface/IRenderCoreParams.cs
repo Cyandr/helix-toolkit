@@ -159,7 +159,7 @@ namespace HelixToolkit.UWP
             /// <value>
             ///   <c>true</c> if [plane1/plane2/plane3/plane4 enabled]; otherwise, <c>false</c>.
             /// </value>
-            Matrix3x2 PlaneEnabled { set; get; }
+            Bool4 PlaneEnabled { set; get; }
 
             /// <summary>
             /// Defines the plane (Normal + d)
