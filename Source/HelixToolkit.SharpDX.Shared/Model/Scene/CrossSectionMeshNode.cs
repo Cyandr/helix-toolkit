@@ -71,12 +71,12 @@ namespace HelixToolkit.UWP
                 set
                 {
                     var v = (RenderCore as ICrossSectionRenderParams).PlaneEnabled;
-                    v[0,0] = value?1.0f:0.0f;
+                    v.X = value;
                     (RenderCore as ICrossSectionRenderParams).PlaneEnabled = v;
                 }
                 get
                 {
-                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled[0, 0] > 0.9 ? true:false ;
+                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled.X;
                 }
             }
             /// <summary>
@@ -90,12 +90,12 @@ namespace HelixToolkit.UWP
                 set
                 {
                     var v = (RenderCore as ICrossSectionRenderParams).PlaneEnabled;
-                    v[0,1] = value ? 1.0f : 0.0f;
+                    v.Y = value;
                     (RenderCore as ICrossSectionRenderParams).PlaneEnabled = v;
                 }
                 get
                 {
-                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled[0, 1] > 0.9 ? true : false;
+                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled.Y;
                 }
             }
             /// <summary>
@@ -109,12 +109,12 @@ namespace HelixToolkit.UWP
                 set
                 {
                     var v = (RenderCore as ICrossSectionRenderParams).PlaneEnabled;
-                    v[1, 0] = value ? 1.0f : 0.0f;
+                    v.Z = value;
                     (RenderCore as ICrossSectionRenderParams).PlaneEnabled = v;
                 }
                 get
                 {
-                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled[1, 0] > 0.9 ? true : false;
+                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled.Z;
                 }
             }
             /// <summary>
@@ -128,39 +128,12 @@ namespace HelixToolkit.UWP
                 set
                 {
                     var v = (RenderCore as ICrossSectionRenderParams).PlaneEnabled;
-                    v[1, 1] = value ? 1.0f : 0.0f;
+                    v.W = value;
                     (RenderCore as ICrossSectionRenderParams).PlaneEnabled = v;
                 }
                 get
                 {
-                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled[1, 1] > 0.9 ? true : false;
-                }
-            }
-
-            public bool EnablePlane5
-            {
-                set
-                {
-                    var v = (RenderCore as ICrossSectionRenderParams).PlaneEnabled;
-                    v[2, 0] = value ? 1.0f : 0.0f;
-                    (RenderCore as ICrossSectionRenderParams).PlaneEnabled = v;
-                }
-                get
-                {
-                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled[2, 0] > 0.9 ? true : false;
-                }
-            }
-            public bool EnablePlane6
-            {
-                set
-                {
-                    var v = (RenderCore as ICrossSectionRenderParams).PlaneEnabled;
-                    v[2, 1] = value ? 1.0f : 0.0f;
-                    (RenderCore as ICrossSectionRenderParams).PlaneEnabled = v;
-                }
-                get
-                {
-                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled[2, 1] > 0.9 ? true : false;
+                    return (RenderCore as ICrossSectionRenderParams).PlaneEnabled.W;
                 }
             }
 
