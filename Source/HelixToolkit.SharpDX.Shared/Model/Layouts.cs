@@ -481,7 +481,7 @@ namespace HelixToolkit.UWP
         /// <para>M30M31M32 PlaneNormal4 M33 Plane4 Distance to origin</para>
         /// </summary>
         //public Matrix CrossPlaneParams;
-        public const int SizeInBytes = 4 * (4 * 3 + 4 * 4);
+        public const int SizeInBytes = 4 * (4 * 5 + 4 * 6);
 
         public const string EnableCrossPlaneStr = "EnableCrossPlane";
         public const string CrossSectionColorStr = "CrossSectionColors";
@@ -490,6 +490,8 @@ namespace HelixToolkit.UWP
         public const string CrossPlane2ParamsStr = "CrossPlane2Params";
         public const string CrossPlane3ParamsStr = "CrossPlane3Params";
         public const string CrossPlane4ParamsStr = "CrossPlane4Params";
+        public const string CrossPlane5ParamsStr = "CrossPlane5Params";
+        public const string CrossPlane6ParamsStr = "CrossPlane6Params";
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 4)]

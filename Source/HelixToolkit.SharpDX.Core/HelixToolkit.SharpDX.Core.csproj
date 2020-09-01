@@ -13,7 +13,7 @@
       <AssemblyOriginatorKeyFile>..\HelixToolkit.snk</AssemblyOriginatorKeyFile>
       <Company>HelixToolkit</Company>
       <Authors>HelixToolkit Contributors</Authors>
-      <Version>0.0.0.1</Version>
+      <Version>2.12.1-beta.2</Version>
       <RepositoryType>git</RepositoryType>
       <PackageTags>SharpDX; DirectX; 3D;</PackageTags>
       <RootNamespace>HelixToolkit.SharpDX.Core</RootNamespace>

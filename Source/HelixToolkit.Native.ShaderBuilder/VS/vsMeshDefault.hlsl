@@ -131,25 +131,35 @@ PSInput main(VSInstancingInput input)
 
 #if defined(CLIPPLANE)
     output.clipPlane = float4(0, 0, 0, 0);
-    if (EnableCrossPlane.x)
+    if (EnableCrossPlane[0][0]>0.9)
     {
         float3 p = output.wp.xyz - CrossPlane1Params.xyz * CrossPlane1Params.w;
         output.clipPlane.x = dot(CrossPlane1Params.xyz, p);
     }
-    if (EnableCrossPlane.y)
+    if (EnableCrossPlane[0][1] > 0.9)
     {
         float3 p = output.wp.xyz - CrossPlane2Params.xyz * CrossPlane2Params.w;
-        output.clipPlane.y = dot(CrossPlane2Params.xyz, p);
+        output.clipPlane.x = dot(CrossPlane2Params.xyz, p);
     }
-    if (EnableCrossPlane.z)
+    if (EnableCrossPlane[1][0] > 0.9)
     {
         float3 p = output.wp.xyz - CrossPlane3Params.xyz * CrossPlane3Params.w;
-        output.clipPlane.z = dot(CrossPlane3Params.xyz, p);
+        output.clipPlane.y = dot(CrossPlane3Params.xyz, p);
     }
-    if (EnableCrossPlane.w)
+    if (EnableCrossPlane[1][1] > 0.9)
     {
         float3 p = output.wp.xyz - CrossPlane4Params.xyz * CrossPlane4Params.w;
-        output.clipPlane.w = dot(CrossPlane4Params.xyz, p);
+        output.clipPlane.y = dot(CrossPlane4Params.xyz, p);
+    }
+    if (EnableCrossPlane[2][0] > 0.9)
+    {
+        float3 p = output.wp.xyz - CrossPlane5Params.xyz * CrossPlane5Params.w;
+        output.clipPlane.z = dot(CrossPlane5Params.xyz, p);
+    }
+    if (EnableCrossPlane[2][1] > 0.9)
+    {
+        float3 p = output.wp.xyz - CrossPlane6Params.xyz * CrossPlane6Params.w;
+        output.clipPlane.z = dot(CrossPlane6Params.xyz, p);
     }
     if (CuttingOperation == 1)
     {

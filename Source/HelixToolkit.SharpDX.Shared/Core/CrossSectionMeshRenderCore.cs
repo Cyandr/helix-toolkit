@@ -70,8 +70,8 @@ namespace HelixToolkit.UWP
                 get { return sectionColor; }
             }
 
-            private Bool4 planeEnabled;
-            public Bool4 PlaneEnabled
+            private Matrix3x2 planeEnabled;
+            public Matrix3x2 PlaneEnabled
             {
                 set
                 {
@@ -159,6 +159,42 @@ namespace HelixToolkit.UWP
                 }
             }
 
+            private Vector4 plane5Params;
+            /// <summary>
+            /// Defines the plane 4(Normal + d)
+            /// </summary>
+            public Vector4 Plane5Params
+            {
+                set
+                {
+                    if (SetAffectsRender(ref plane5Params, value))
+                    {
+                        clipParamCB.WriteValueByName(ClipPlaneStruct.CrossPlane5ParamsStr, value);
+                    }
+                }
+                get
+                {
+                    return plane5Params;
+                }
+            }
+            private Vector4 plane6Params;
+            /// <summary>
+            /// Defines the plane 4(Normal + d)
+            /// </summary>
+            public Vector4 Plane6Params
+            {
+                set
+                {
+                    if (SetAffectsRender(ref plane6Params, value))
+                    {
+                        clipParamCB.WriteValueByName(ClipPlaneStruct.CrossPlane6ParamsStr, value);
+                    }
+                }
+                get
+                {
+                    return plane6Params;
+                }
+            }
             #endregion
 
             public CrossSectionMeshRenderCore()
@@ -223,6 +259,8 @@ namespace HelixToolkit.UWP
                             clipParamCB.WriteValueByName(ClipPlaneStruct.CrossPlane2ParamsStr, plane2Params);
                             clipParamCB.WriteValueByName(ClipPlaneStruct.CrossPlane3ParamsStr, plane3Params);
                             clipParamCB.WriteValueByName(ClipPlaneStruct.CrossPlane4ParamsStr, plane4Params);
+                            clipParamCB.WriteValueByName(ClipPlaneStruct.CrossPlane5ParamsStr, plane5Params);
+                            clipParamCB.WriteValueByName(ClipPlaneStruct.CrossPlane6ParamsStr, plane6Params);
                             needsAssignVariables = false;
                         }
                     }

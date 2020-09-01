@@ -139,7 +139,7 @@ namespace HelixToolkit.UWP
             }
             /// <summary>
             /// Called when [dispose].
-            /// </summary>
+            /// </summary> 
             /// <param name="disposeManagedResources">if set to <c>true</c> [dispose managed resources].</param>
             protected override void OnDispose(bool disposeManagedResources)
             {

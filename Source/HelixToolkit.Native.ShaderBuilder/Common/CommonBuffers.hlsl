@@ -211,10 +211,10 @@ cbuffer cbShadow : register(b5)
 #if defined(CLIPPLANE)
 cbuffer cbClipping : register(b6)
 {
-    bool4 EnableCrossPlane;
+    float3x2 EnableCrossPlane;
     float4 CrossSectionColors;
     int CuttingOperation;
-    float3 paddingClipping;
+    float3 paddingClipping1;
 	// Format:
 	// M00M01M02 PlaneNormal1 M03 Plane1 Distance to origin
 	// M10M11M12 PlaneNormal2 M13 Plane2 Distance to origin
@@ -224,6 +224,8 @@ cbuffer cbClipping : register(b6)
     float4 CrossPlane2Params;
     float4 CrossPlane3Params;
     float4 CrossPlane4Params;
+    float4 CrossPlane5Params; 
+    float4 CrossPlane6Params;
 }
 #endif
 

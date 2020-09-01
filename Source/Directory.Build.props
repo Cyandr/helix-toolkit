@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <NoWarn>NU5105</NoWarn>
+    <Authors>CBIMS</Authors>
+    <Company>THU</Company>
+  </PropertyGroup>
+</Project>
+  

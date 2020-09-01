@@ -445,7 +445,8 @@ namespace HelixToolkit.Wpf.SharpDX
                 var viewport = d as Viewport3DX;
                 viewport.CameraController.LeftRightRotationSensitivity = (double)e.NewValue;
             }));
-
+        public static readonly DependencyProperty CoordinateAxisTransformProperty =
+       DependencyProperty.Register("CoordinateAxisTransform", typeof(Transform3D), typeof(Viewport3DX), new PropertyMetadata(Transform3D.Identity));
         /// <summary>
         /// The maximum field of view property
         /// </summary>
@@ -1924,7 +1925,15 @@ namespace HelixToolkit.Wpf.SharpDX
                 this.SetValue(LeftRightRotationSensitivityProperty, value);
             }
         }
-
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        public Transform3D CoordinateAxisTransform
+        {
+            get { return (Transform3D)this.GetValue(CoordinateAxisTransformProperty); }
+            set { this.SetValue(CoordinateAxisTransformProperty, value); }
+        }
         /// <summary>
         /// Gets or sets the maximum field of view.
         /// </summary>

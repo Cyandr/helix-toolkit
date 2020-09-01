@@ -196,7 +196,7 @@ namespace HelixToolkit.UWP
                     if (material.DiffuseMap == null)
                     {
                         material.DiffuseMap = ViewBoxTexture ?? BitmapExtensions.CreateViewBoxTexture(host.EffectsManager,
-                            "F", "B", "L", "R", "U", "D", Color.Red, Color.Red, Color.Blue, Color.Blue, Color.Green, Color.Green,
+                            "前", "后", "左", "右", "上", "下", Color.Red, Color.Red, Color.Blue, Color.Blue, Color.Green, Color.Green,
                             Color.White, Color.White, Color.White, Color.White, Color.White, Color.White);
                     }
                     return true;

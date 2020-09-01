@@ -164,6 +164,30 @@ namespace HelixToolkit.Wpf.SharpDX
         /// <summary>
         /// Enable CrossSection Plane
         /// </summary>
+        public bool EnablePlane5
+        {
+            set
+            {
+                SetValue(EnablePlane5Property, value);
+            }
+            get
+            {
+                return (bool)GetValue(EnablePlane5Property);
+            }
+        }
+        /// <summary>
+        /// Enable CrossSection Plane
+        /// </summary>
+        public static DependencyProperty EnablePlane5Property = DependencyProperty.Register("EnablePlane5", typeof(bool), typeof(CrossSectionMeshGeometryModel3D),
+           new PropertyMetadata(false,
+           (d, e) =>
+           {
+               ((d as Element3DCore).SceneNode as CrossSectionMeshNode).EnablePlane5 = (bool)e.NewValue;
+           }));
+
+        /// <summary>
+        /// Enable CrossSection Plane
+        /// </summary>
         public bool EnablePlane4
         {
             set
@@ -175,6 +199,31 @@ namespace HelixToolkit.Wpf.SharpDX
                 return (bool)GetValue(EnablePlane4Property);
             }
         }
+
+
+        /// <summary>
+        /// Enable CrossSection Plane
+        /// </summary>
+        public bool EnablePlane6
+        {
+            set
+            {
+                SetValue(EnablePlane6Property, value);
+            }
+            get
+            {
+                return (bool)GetValue(EnablePlane6Property);
+            }
+        }
+        /// <summary>
+        /// Enable CrossSection Plane
+        /// </summary>
+        public static DependencyProperty EnablePlane6Property = DependencyProperty.Register("EnablePlane6", typeof(bool), typeof(CrossSectionMeshGeometryModel3D),
+           new PropertyMetadata(false,
+           (d, e) =>
+           {
+               ((d as Element3DCore).SceneNode as CrossSectionMeshNode).EnablePlane6 = (bool)e.NewValue;
+           }));
 
         /// <summary>
         /// Defines the Plane1Property
@@ -275,7 +324,57 @@ namespace HelixToolkit.Wpf.SharpDX
                 return (Plane)GetValue(Plane4Property);
             }
         }
-#endregion
+
+        /// <summary>
+        /// Defines the Plane4Property
+        /// </summary>
+        public static DependencyProperty Plane5Property = DependencyProperty.Register("Plane5", typeof(Plane), typeof(CrossSectionMeshGeometryModel3D),
+           new PropertyMetadata(new Plane(),
+           (d, e) =>
+           {
+               ((d as Element3DCore).SceneNode as CrossSectionMeshNode).Plane5 = (Plane)e.NewValue;
+           }));
+
+        /// <summary>
+        /// Gets or sets the Plane4
+        /// </summary>
+        public Plane Plane5
+        {
+            set
+            {
+                SetValue(Plane5Property, value);
+            }
+            get
+            {
+                return (Plane)GetValue(Plane5Property);
+            }
+        }
+
+        /// <summary>
+        /// Defines the Plane4Property
+        /// </summary>
+        public static DependencyProperty Plane6Property = DependencyProperty.Register("Plane6", typeof(Plane), typeof(CrossSectionMeshGeometryModel3D),
+           new PropertyMetadata(new Plane(),
+           (d, e) =>
+           {
+               ((d as Element3DCore).SceneNode as CrossSectionMeshNode).Plane6 = (Plane)e.NewValue;
+           }));
+
+        /// <summary>
+        /// Gets or sets the Plane4
+        /// </summary>
+        public Plane Plane6
+        {
+            set
+            {
+                SetValue(Plane6Property, value);
+            }
+            get
+            {
+                return (Plane)GetValue(Plane6Property);
+            }
+        }
+        #endregion
 
         protected override SceneNode OnCreateSceneNode()
         {

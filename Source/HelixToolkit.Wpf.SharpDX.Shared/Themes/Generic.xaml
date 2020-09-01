@@ -41,6 +41,8 @@
                                 CoordinateSystemLabelZ="{TemplateBinding CoordinateSystemLabelZ}"
                                 EnableMover="{TemplateBinding IsCoordinateSystemMoverEnabled}"
                                 IsRendering="{TemplateBinding ShowCoordinateSystem}"
+                                Mode="RelativeScreenSpaced"
+                                Transform="{TemplateBinding CoordinateAxisTransform}"
                                 LabelColor="{TemplateBinding CoordinateSystemLabelForeground}"
                                 RelativeScreenLocationX="{TemplateBinding CoordinateSystemHorizontalPosition}"
                                 RelativeScreenLocationY="{TemplateBinding CoordinateSystemVerticalPosition}"

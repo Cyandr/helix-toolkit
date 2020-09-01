@@ -92,14 +92,15 @@ namespace HelixToolkit.Wpf.SharpDX
         {
             if (deferredRendering)
             {
-                RenderHost = new DX11ImageSourceRenderHost((device) => { return new DeferredContextRenderer(device, new AutoRenderTaskScheduler()); });
+                RenderHost = new DX11ImageSourceRenderHost((device) => { return new DeferredContextRenderer(device, new AutoRenderTaskScheduler()); }, OnIsFrontBufferAvailableChanged);
             }
             else
             {
-                RenderHost = new DX11ImageSourceRenderHost();
+                RenderHost = new DX11ImageSourceRenderHost(OnIsFrontBufferAvailableChanged);
             }
             Loaded += OnLoaded;
             Unloaded += OnUnloaded;
+           
             RenderHost.StartRenderLoop += RenderHost_StartRenderLoop;
             RenderHost.StopRenderLoop += RenderHost_StopRenderLoop;
             RenderHost.ExceptionOccurred += (s, e) => { HandleExceptionOccured(e.Exception); };

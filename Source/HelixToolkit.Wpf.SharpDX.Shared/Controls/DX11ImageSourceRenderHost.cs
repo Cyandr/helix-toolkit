@@ -10,12 +10,14 @@ using Device = SharpDX.Direct3D11.Device;
 #if COREWPF
 using HelixToolkit.SharpDX.Core;
 using HelixToolkit.SharpDX.Core.Render;
+using System.Windows;
 #endif
 
 namespace HelixToolkit.Wpf.SharpDX
 {
 #if !COREWPF
     using Render;
+    using System.Windows;
 #endif
 
     namespace Controls
@@ -38,14 +40,16 @@ namespace HelixToolkit.Wpf.SharpDX
             private bool frontBufferChange = false;
             private bool hasBackBuffer = false;
 
-            public DX11ImageSourceRenderHost(Func<IDevice3DResources, IRenderer> createRenderer) : base(createRenderer)
+            public DX11ImageSourceRenderHost(Func<IDevice3DResources, IRenderer> createRenderer, DependencyPropertyChangedEventHandler eventhandler) : base(createRenderer)
             {
                 this.OnNewRenderTargetTexture += DX11ImageSourceRenderer_OnNewBufferCreated;
+                surfaceD3D.IsFrontBufferAvailableChanged += eventhandler;
             }
 
-            public DX11ImageSourceRenderHost()
+            public DX11ImageSourceRenderHost(DependencyPropertyChangedEventHandler eventhandler)
             {
                 this.OnNewRenderTargetTexture += DX11ImageSourceRenderer_OnNewBufferCreated;
+                surfaceD3D.IsFrontBufferAvailableChanged += eventhandler;
             }
 
             protected override void PostRender()
