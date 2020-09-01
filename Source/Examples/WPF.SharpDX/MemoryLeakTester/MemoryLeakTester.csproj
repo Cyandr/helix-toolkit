@@ -182,13 +182,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AssimpNet">
-      <Version>4.1.0</Version>
+      <Version>5.0.0-beta1</Version>
     </PackageReference>
     <PackageReference Include="Expression.Interaction">
       <Version>3.0.40218</Version>
     </PackageReference>
     <PackageReference Include="Fody">
-      <Version>6.2.0</Version>
+      <Version>6.2.1</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
