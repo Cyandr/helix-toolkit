@@ -43,13 +43,15 @@ namespace HelixToolkit.Wpf.SharpDX
             public DX11ImageSourceRenderHost(Func<IDevice3DResources, IRenderer> createRenderer, DependencyPropertyChangedEventHandler eventhandler) : base(createRenderer)
             {
                 this.OnNewRenderTargetTexture += DX11ImageSourceRenderer_OnNewBufferCreated;
-                surfaceD3D.IsFrontBufferAvailableChanged += eventhandler;
+                if (surfaceD3D != null)
+                    surfaceD3D.IsFrontBufferAvailableChanged += eventhandler;
             }
 
             public DX11ImageSourceRenderHost(DependencyPropertyChangedEventHandler eventhandler)
             {
                 this.OnNewRenderTargetTexture += DX11ImageSourceRenderer_OnNewBufferCreated;
-                surfaceD3D.IsFrontBufferAvailableChanged += eventhandler;
+                if (surfaceD3D != null)
+                    surfaceD3D.IsFrontBufferAvailableChanged += eventhandler;
             }
 
             protected override void PostRender()
@@ -91,7 +93,7 @@ namespace HelixToolkit.Wpf.SharpDX
                 hasBackBuffer = e.Texture.Resource is Texture2D;
                 OnImageSourceChanged(this, new DX11ImageSourceArgs(surfaceD3D));
                 if (hasBackBuffer)
-                { 
+                {
                     Logger.Log(HelixToolkit.Logger.LogLevel.Information, $"New back buffer is set.");
                 }
                 else
